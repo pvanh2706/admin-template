@@ -14,7 +14,8 @@
                 </div>
 
                 <!-- Bọc toàn bộ trong el-form -->
-                <el-form ref="loginFormRef" :model="forgotPassForm" :rules="rules" label-position="top" class="space-y-6">
+                <el-form ref="loginFormRef" :model="forgotPassForm" :rules="rules" label-position="top"
+                    class="space-y-6">
                     <div class="space-y-4">
                         <el-form-item label="Địa chỉ email" prop="email" class="text-left">
                             <el-input v-model="forgotPassForm.email" placeholder="Nhập địa chỉ email" type="email"
@@ -50,34 +51,34 @@ import { ref } from 'vue';
 import type { FormInstance, FormRules } from 'element-plus';
 
 const forgotPassForm = ref({
-  email: '',
-  password: '',
-  rememberPassword: false,
+    email: '',
+    password: '',
+    rememberPassword: false,
 });
 
 const loginFormRef = ref<FormInstance>();
 
 const rules: FormRules = {
-  email: [
-    { required: true, message: 'Vui lòng nhập email', trigger: 'blur' },
-    { type: 'email', message: 'Email không hợp lệ', trigger: 'blur' },
-  ],
-  password: [
-    { required: true, message: 'Vui lòng nhập mật khẩu', trigger: 'blur' },
-    { min: 8, message: 'Mật khẩu phải có ít nhất 8 ký tự', trigger: 'blur' },
-  ],
+    email: [
+        { required: true, message: 'Vui lòng nhập email', trigger: 'blur' },
+        { type: 'email', message: 'Email không hợp lệ', trigger: 'blur' },
+    ],
+    password: [
+        { required: true, message: 'Vui lòng nhập mật khẩu', trigger: 'blur' },
+        { min: 8, message: 'Mật khẩu phải có ít nhất 8 ký tự', trigger: 'blur' },
+    ],
 };
 
 const submitForm = () => {
-  if (!loginFormRef.value) return;
+    if (!loginFormRef.value) return;
 
-  loginFormRef.value.validate((valid) => {
-    if (valid) {
-      console.log('Login successful with:', forgotPassForm.value);
-    } else {
-      console.log('Validation failed');
-    }
-  });
+    loginFormRef.value.validate((valid) => {
+        if (valid) {
+            console.log('Login successful with:', forgotPassForm.value);
+        } else {
+            console.log('Validation failed');
+        }
+    });
 };
 </script>
 
