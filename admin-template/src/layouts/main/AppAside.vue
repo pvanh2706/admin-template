@@ -2,7 +2,8 @@
     <aside v-if="layoutDirection === 'vertical' && !isMobile" class="flex flex-col transition-all duration-300"
         :class="[collapsed ? 'w-20' : 'w-60']" :style="{ backgroundColor: asideBgColor, color: asideTextColor }">
         <div class="p-2 text-center font-bold">
-            <el-button text @click="collapsed = !collapsed">
+            <!-- <el-button text @click="collapsed = !collapsed"> -->
+            <el-button text @click="emit('update:collapsed', !collapsed)"></el-button>
                 <el-icon>
                     <Menu />
                 </el-icon>
