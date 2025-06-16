@@ -27,21 +27,26 @@
                         </el-icon><span>Settings</span></el-menu-item>
                 </el-menu> -->
                 <el-menu default-active="/" class="el-menu-vertical" router>
-                        <el-menu-item index="/">
-                            <el-icon size="25"><HomeFilled /></el-icon>
-                            <span>Tổng quan</span>
-                        </el-menu-item>
-                        <el-sub-menu class="code-on-sub-menu-item" index="2">
-                            <template #title>
-                                <el-icon size="25"><Goods /></el-icon>
-                                <span class="code-on-sub-menu-item-title">Sản phẩm</span>
-                            </template>
-                            <el-menu-item class="code-on-menu-item" index="/product-category">Danh mục sản phẩm</el-menu-item>
-                            <el-menu-item class="code-on-menu-item" index="/check-stock">Kiểm kho</el-menu-item>
-                            <el-menu-item class="code-on-menu-item" index="/import">Nhập hàng</el-menu-item>
-                            <el-menu-item class="code-on-menu-item" index="/return">Trả hàng nhập</el-menu-item>
-                        </el-sub-menu>
-                    </el-menu>
+                    <el-menu-item index="/">
+                        <el-icon size="25">
+                            <HomeFilled />
+                        </el-icon>
+                        <span>Tổng quan</span>
+                    </el-menu-item>
+                    <el-sub-menu class="code-on-sub-menu-item" index="2">
+                        <template #title>
+                            <el-icon size="25">
+                                <Goods />
+                            </el-icon>
+                            <span class="code-on-sub-menu-item-title">Sản phẩm</span>
+                        </template>
+                        <el-menu-item class="code-on-menu-item" index="/product-category">Danh mục sản
+                            phẩm</el-menu-item>
+                        <el-menu-item class="code-on-menu-item" index="/check-stock">Kiểm kho</el-menu-item>
+                        <el-menu-item class="code-on-menu-item" index="/import">Nhập hàng</el-menu-item>
+                        <el-menu-item class="code-on-menu-item" index="/return">Trả hàng nhập</el-menu-item>
+                    </el-sub-menu>
+                </el-menu>
             </aside>
 
             <div class="flex-1 flex flex-col">
@@ -82,8 +87,8 @@
                 </header>
 
                 <!-- Main -->
-                <main class="flex-1 overflow-auto p-8" :style="{ backgroundColor: mainBgColor, color: mainTextColor }">
-                    Main content for menu {{ activeMenu }}
+                <main class="flex-1 overflow-auto" :style="{ backgroundColor: mainBgColor, color: mainTextColor }">
+                   <router-view></router-view>
                 </main>
             </div>
         </div>
